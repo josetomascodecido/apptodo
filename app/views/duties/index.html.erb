@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <% @duties.each_slice(3) do |row|  %>
+      <% row.each do |duty| %>
+        <div class="col">
+          <div class="card">
+            <%= image_tag duty.photo, class: 'card-img-top'  %>
+            <div class="body">
+              <h5>  <%= duty.name %></h5>
+              
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="w-100" style="margin-top:20px"></div>
+    <%end  %>
+  </div>
+</div>
