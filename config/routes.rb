@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :duties, only: :index do
+    member do
+      post :check
+    end
     resources :orders, only: :create
   end
   resources :orders, only: :index

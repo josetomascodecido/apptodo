@@ -9,11 +9,12 @@
       <tbody>
         <tr>
         <% @orders.each do |order| %>
+        <%if order.check %>
           <td><%= order.duty.name %></td>
-
+        <%end %>
         </tr>
         <% end %>
-        
+
       </tbody>
 
     </table>
