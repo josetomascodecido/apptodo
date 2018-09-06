@@ -7,6 +7,8 @@
             <%= image_tag duty.photo, class: 'card-img-top'  %>
             <div class="body">
               <h5>  <%= duty.name %></h5>
+              <p> Last updated <%= time_ago_in_words duty.created_at %> </p>
+              <%= link_to "Hacerla", duty_orders_path(duty), class: 'btn btn-success', method: :post %>
 
 
             </div>
