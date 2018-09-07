@@ -4,17 +4,20 @@
       <h1>Top five</h1>
       <thead>
         <tr>
+          <th>#</th>
           <th>Name</th>
           <th>Photo</th>
-          <th>Duty</th>
+          <th>Email</th>
         </tr>
       </thead>
       <tbody>
-        <% @orders.each do |row|  %>
+
+        <% @orders.take(5).each_with_index do |order, i|  %>
         <tr>
-          <th><%= row.user.email %></th>
-          <th><%=image_tag row.user.photo %></th>
-          <th> <%= row.duty.name %></th>
+          <th> <%= i + 1 %></th>
+          <th><%= order.user.name %></th>
+          <th><%=image_tag order.user.photo, class:'rounded-circle', style:'max-width:50px'%></th>
+          <th> <%= order.user.email %></th>
         </tr>
         <% end   %>
       </tbody>
@@ -26,19 +29,26 @@
       <h1>Ranking General</h1>
       <thead>
         <tr>
+          <th>#</th>
           <th>Name</th>
           <th>Photo</th>
-          <th>Duty</th>
+          <th>Email</th>
         </tr>
       </thead>
       <tbody>
-        <% @orders.each do |row|  %>
+
+        <% @orders.each_with_index do |order, i|  %>
+
         <tr>
-          <th><%= row.user.email %></th>
-          <th></th>
-          <th> <%= row.duty.name %></th>
+          <%if i >= 5 && checkingduty(Duty.find(params[:id])) %>
+
+          <th> <%= i + 1 %></th>
+          <th><%= order.name %></th>
+          <th><%=image_tag order.photo, class:'rounded-circle', style:'max-width:50px'%></th>
+          <th> <%= order.email %></th>
         </tr>
-        <% end   %>
+        <%end%>
+        <% end%>
       </tbody>
     </table>
 

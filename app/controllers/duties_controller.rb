@@ -23,7 +23,7 @@ class DutiesController < ApplicationController
   end
 
   def show
-    @orders = Order.where(duty: params[:id], check: true)
+    @orders = Order.where(check: true, duty_id: params[:id])
   end
 
 
