@@ -43,14 +43,14 @@
           <%if i >= 5 && checkingduty(Duty.find(params[:id])) %>
 
           <th> <%= i + 1 %></th>
-          <th><%= order.name %></th>
-          <th><%=image_tag order.photo, class:'rounded-circle', style:'max-width:50px'%></th>
-          <th> <%= order.email %></th>
+          <th><%= order.user.name %></th>
+          <th><%=image_tag order.user.photo, class:'rounded-circle', style:'max-width:50px'%></th>
+          <th> <%= order.user.email %></th>
         </tr>
         <%end%>
         <% end%>
       </tbody>
     </table>
-
+    
   </div>
 </div>

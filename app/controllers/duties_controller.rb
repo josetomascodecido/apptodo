@@ -19,7 +19,7 @@ class DutiesController < ApplicationController
       @verification.save
     end
 
-      redirect_to duties_path, notice: 'Tarea Cumplida'
+      redirect_to duties_path, notice: 'Hemos registrado tu cambio!'
   end
 
   def show

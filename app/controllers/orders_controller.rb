@@ -4,13 +4,13 @@ class OrdersController < ApplicationController
     @duty = Duty.find(params[:duty_id])
     @order = Order.new(duty: @duty, user: current_user)
     if @order.save
-      redirect_to duties_path, notice: 'Tarea Cumplida'
+      redirect_to duties_path, notice: 'Hemos registrado tu cambio'
 
     else
-      redirect_to duties_path, notice: 'Tarea no ingresada'
+      redirect_to duties_path, notice: 'Tarea desmarcada'
     end
   end
-  
+
 
 
   def index
