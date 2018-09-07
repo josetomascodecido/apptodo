@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <h1>Top five</h1>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Photo</th>
+          <th>Duty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |row|  %>
+        <tr>
+          <th><%= row.user.email %></th>
+          <th><%=image_tag row.user.photo %></th>
+          <th> <%= row.duty.name %></th>
+        </tr>
+        <% end   %>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="col-md-6">
+    <table class="table">
+      <h1>Ranking General</h1>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Photo</th>
+          <th>Duty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |row|  %>
+        <tr>
+          <th><%= row.user.email %></th>
+          <th></th>
+          <th> <%= row.duty.name %></th>
+        </tr>
+        <% end   %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

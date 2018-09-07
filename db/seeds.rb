@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+  Order.delete_all
+  Duty.delete_all
   duties = Duty.create(
     [
       {name: 'Tomar Terremoto', photo: 'https://igx.4sqi.net/img/general/200x200/uM4dZOD40A_AfHO0D8rkHUmRs4vAb3MEdHFaOlg9eqk.jpg'},

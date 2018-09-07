@@ -4,7 +4,7 @@
       <% row.each do |duty| %>
         <div class="col">
           <div class="card">
-            <%= image_tag duty.photo, class: 'card-img-top'  %>
+            <a href="<%= duty_path(duty) %>" ><%= image_tag duty.photo, class: 'card-img-top'  %></a>
             <div class="body">
               <h5>  <%= duty.name %></h5>
 

@@ -1,4 +1,5 @@
 class DutiesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @duties = Duty.all
 
@@ -17,10 +18,13 @@ class DutiesController < ApplicationController
       @verification.check = !@verification.check
       @verification.save
     end
-    
+
       redirect_to duties_path, notice: 'Tarea Cumplida'
   end
 
+  def show
+    @orders = Order.where(duty: params[:id], check: true)
+  end
 
 
 end
